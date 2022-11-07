@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body id="app">
+<body id="app" class="">
 
     <header class="header">
         <div class="container">
@@ -24,10 +24,10 @@
                 <div class="header__social">
                     <p class="header__social-name">Oleg Barlas</p>
                     <div>
-                        <a class="header__social-link" href="">
+                        <a class="header__social-link" href="https://github.com/Salrabber">
                             <img class="header__social-img" src="images/git-hub.svg" alt="">
                         </a>
-                        <a class="header__social-link " href="">
+                        <a class="header__social-link " href="https://www.linkedin.com/in/barlasoleg/">
                             <img class="header__social-img" src="images/linked-in.svg" alt="">
                         </a>
                     </div>
@@ -44,13 +44,22 @@
                         LANDINGS
                     </h2>
                     <ul class="main__list">
-                        <li class="main__list-item">
-                            <a class="main__list-link hover-active" hover-info="Link to deploy" href="">
+                        <li class="main__list-item" v-for="(landing, idx) in projects.landings">
+                            <a class="main__list-link hover-active" hover-info="Link to deploy" :href="landing.deployLink">
                                 <img class="main__list-img" src="images/link-icon.svg" alt="">
                             </a>
-                            <p class="main__list-text hover-active" hover-info="Description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                            <p class="main__list-text hover-active" hover-info="Description" 
+                            :descr="landing.descr"
+                             
+                              @:click="switchDescr('landings', idx)">
+                                {{landing.name}}
                             </p>
+                            <div class="modal" v-if="landing.descrVisible" @:click="switchDescr('landings', idx)">
+                                <div class="modal__inner">
+                                    <p class="modal__text">{{landing.descr}}</p>
+                                    <a class="modal__link" :href="landing.repoLink">Repository Link</a>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -59,13 +68,23 @@
                         APPS
                     </h2>
                     <ul class="main__list">
-                        <li class="main__list-item">
-                            <a class="main__list-link hover-active" href="" hover-info="Link to deploy" >
+                        <li class="main__list-item" v-for="(landing, idx) in projects.apps">
+                            <a class="main__list-link hover-active" hover-info="Link to deploy" :href="landing.deployLink">
                                 <img class="main__list-img" src="images/link-icon.svg" alt="">
                             </a>
-                            <p class="main__list-text hover-active" hover-info="Description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                            <p class="main__list-text hover-active" hover-info="Description" 
+                            :descr="landing.descr"
+                             
+                              @:click="switchDescr('apps', idx)">
+                                {{landing.name}}
+                                <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit -->
                             </p>
+                            <div class="modal" v-if="landing.descrVisible" @:click="switchDescr('apps', idx)">
+                                <div class="modal__inner">
+                                    <p class="modal__text">{{landing.descr}}</p>
+                                    <a class="modal__link" :href="landing.repoLink">Repository Link</a>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>

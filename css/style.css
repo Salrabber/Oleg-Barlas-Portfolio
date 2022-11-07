@@ -103,6 +103,7 @@ ul {
     display: flex;
     justify-content: flex-start;
     /* align-items: center; */
+    margin-bottom: 15px;
 }
 
 .main__list-link {
@@ -124,14 +125,14 @@ ul {
     border: 5px solid #FFC5E2;
     border-radius: 20px;
     text-align: center;
-    padding-top: 10px;
+    height: max-content;
+    padding: 20px 0;
     cursor: pointer;
     position: relative;
     z-index: 1;
-    transition: all .4s
+    transition: all .4s;
+    width: 420px;
 }
-
-
 
 .hover-active::before {
     --scale: 0;
@@ -168,10 +169,10 @@ ul {
 
 /* .main__list-text::after */
 
-.custom::after {
+.main__list-text::after {
     --scale: 0;
     position: absolute;
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.';
+    content: attr(descr);
     font-size: 14px;
     line-height: 19px;
     width: 300px;
@@ -182,7 +183,45 @@ ul {
     transition: 100ms transform;
     transform-origin: top center;
     transition-duration: 500ms;
-    /* z-index: -5; */
+}
+
+
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.2);
+    
+}
+
+.modal__inner{
+    width: 500px;
+    position: absolute;
+    top: 35%;
+    padding: 6px;
+    background-color: #E9E9E9;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid #FFC5E2;
+    border-radius: 20px;
+    padding-bottom: 10px;
+}
+
+.modal__text{
+    margin-bottom: 10px;
+}
+
+.modal__link{
+    font-weight: 700;
+}
+
+.modal__link:hover {
+    background-color: #FFC5E2;
+    border-radius: 20px;
+    padding: 5px 10px;
 }
 
 .main__list-link:hover,
@@ -190,7 +229,8 @@ ul {
     background-color: #E9E9E9;
 
 }
-.main__list-text:hover::after {
+.custom:after {
     --scale: 1;
+
     /* transform: translateX(-105%)  scale(var(--scale)); */
 }
