@@ -121,6 +121,11 @@ ul {
 
 }
 
+.chosen{
+    background-color: #E9E9E9;
+
+}
+
 .main__list-text {
     border: 5px solid #FFC5E2;
     border-radius: 20px;

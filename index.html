@@ -45,13 +45,12 @@
                     </h2>
                     <ul class="main__list">
                         <li class="main__list-item" v-for="(landing, idx) in projects.landings">
-                            <a class="main__list-link hover-active" hover-info="Link to deploy" :href="landing.deployLink">
+                            <a class="main__list-link hover-active" hover-info="Link to deploy"
+                                :href="landing.deployLink">
                                 <img class="main__list-img" src="images/link-icon.svg" alt="">
                             </a>
-                            <p class="main__list-text hover-active" hover-info="Description" 
-                            :descr="landing.descr"
-                             
-                              @:click="switchDescr('landings', idx)">
+                            <p class="main__list-text hover-active" hover-info="Description" :descr="landing.descr"
+                                :class="{'chosen': landing.descrVisible}" @:click="switchDescr('landings', idx)">
                                 {{landing.name}}
                             </p>
                             <div class="modal" v-if="landing.descrVisible" @:click="switchDescr('landings', idx)">
@@ -69,13 +68,12 @@
                     </h2>
                     <ul class="main__list">
                         <li class="main__list-item" v-for="(landing, idx) in projects.apps">
-                            <a class="main__list-link hover-active" hover-info="Link to deploy" :href="landing.deployLink">
+                            <a class="main__list-link hover-active" hover-info="Link to deploy"
+                                :href="landing.deployLink">
                                 <img class="main__list-img" src="images/link-icon.svg" alt="">
                             </a>
-                            <p class="main__list-text hover-active" hover-info="Description" 
-                            :descr="landing.descr"
-                             
-                              @:click="switchDescr('apps', idx)">
+                            <p class="main__list-text hover-active" hover-info="Description" :descr="landing.descr"
+                                :class="{'chosen': landing.descrVisible}" @:click="switchDescr('apps', idx)">
                                 {{landing.name}}
                                 <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit -->
                             </p>
