@@ -5,17 +5,17 @@ Vue.createApp({
         landings: [
           {
             descrVisible: false,
-            deployLink: 'https://salrabber.github.io/carsharing/',
-            repoLink: 'https://github.com/Salrabber/carsharing',
-            name: "Carshering layout",
+            deployLink: 'https://salrabber.github.io/There_is_two_chairs/',
+            repoLink: 'https://github.com/Salrabber/There_is_two_chairs',
+            name: "Sitting Chairs",
             descr:
-              "Adaptive Front-end layout created as HTML/CSS practice for skills improvement. Also deployed on GitHub pages",
+              "Front-end layout created with Gulp collector and SCSS preprocessors for practice and skills improvement. Also deployed on GitHub pages",
           },
           {
             descrVisible: false,
-            deployLink: 'https://salrabber.github.io/car-usa/',
-            repoLink: 'https://github.com/Salrabber/car-usa',
-            name: "USA-auto shop-service",
+            deployLink: 'https://salrabber.github.io/Jun-project/',
+            repoLink: 'https://github.com/Salrabber/Jun-project',
+            name: "Always safe!!",
             descr:
               "Front-end layout created as HTML/CSS practice for skills improvement. Also deployed on GitHub pages",
           },
@@ -25,7 +25,7 @@ Vue.createApp({
             repoLink: 'https://github.com/Salrabber/Useless-Bikes',
             name: "Bikes shop layout",
             descr:
-              "Front-end layout created with HTML/CSS/HTML using before/after elements, slick-slider and other tools. Deployed on GitHub pages",
+              "Front-end layout created with Gulp collector and SCSS preprocessors for practice and skills improvement, also were used before/after elements, slick-slider and other tools. Deployed on GitHub pages",
           },
         ],
 
